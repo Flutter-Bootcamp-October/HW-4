@@ -21,7 +21,6 @@ Future<Response> createPostAdminHandler(Request request) async {
       return Response.forbidden('Invalid token');
     }
 
-    // Implement your post creation logic here.
 
     return Response.ok('Post created successfully');
   } catch (e) {
