@@ -11,7 +11,7 @@ homeHandler(Request req) async {
     List temp = l.split(",");
     if (temp[0] == body["email"] &&
         temp[1] == body["password"] &&
-        temp[2] == body["token"]) {
+        temp[2] == req.headers["token"]) {
       return Response.ok("In home successfully");
     }
   }
