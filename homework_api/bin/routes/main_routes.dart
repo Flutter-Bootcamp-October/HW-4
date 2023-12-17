@@ -4,13 +4,22 @@ import 'package:shelf_router/shelf_router.dart';
 import 'user_routes.dart';
 
 class MainRoutes {
-  Router get route {
+  Handler get route {
     final appRoute = Router();
     appRoute
-      ..mount("/user", UserRoutes().route)
+      ..mount("/mywebsite", UserRoutes().route)
       ..all("/<ignored|.*>", (Request req) {
-        return Response.ok("sorry page not found");
+        return Response.ok("sorry page nottt found");
       });
-    return appRoute;
+    final pipeline = Pipeline().addMiddleware(checkType()).addHandler(appRoute);
+
+    return pipeline;
   }
+
+  Middleware checkType() => ((innerHandler) => (Request req) {
+        if (req.headers["type"] == "user") {
+          return innerHandler(req);
+        }
+        return Response.badRequest();
+      });
 }

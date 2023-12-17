@@ -11,7 +11,7 @@ class UserRoutes {
       ..post("/home", homeHandler)
       ..post("/login", loginHandler)
       ..all("/<ignored|.*>", (Request req) {
-        return Response.ok("sorry page not found");
+        return Response.ok("sorry page not found2");
       });
     return appRoute;
   }
