@@ -13,7 +13,7 @@ class AdminRoutes {
     router.get("/home", homeAdminHandler);
     router.post("/login", loginAdminHandler);
     router.post("/signup", signUpAdminHandler);
-    router.post("/create-post", createPostAdminHandler); // Add this line
+    router.post("/create-post", createPostAdminHandler);
 
     return router;
   }
