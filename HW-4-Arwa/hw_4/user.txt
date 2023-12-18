@@ -1,2 +1,2 @@
-email: arwa-xx@hotmail.com
-pass: aa1122
+arwa-xx@hotmail.com
+aa1122
