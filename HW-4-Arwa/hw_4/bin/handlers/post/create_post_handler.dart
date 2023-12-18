@@ -6,7 +6,7 @@ createPostHandler(Request req) async {
   try {
     final pathToken = './token.txt';
     final File file = File(pathToken);
-    final tokenData = await file.readAsString();
+    final tokenData = await file.readAsLines();
 
     if (req.headers["token"] == tokenData[0]) {
       return Response.ok("${tokenData[0]} is Success");
