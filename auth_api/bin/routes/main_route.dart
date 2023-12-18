@@ -6,7 +6,7 @@ import '../handlers/main_route_handler.dart';
 class MainRoutes {
   Handler get route {
     final appRoute = Router();
-    appRoute..get("/login", loginRouteHandler);
+    appRoute.get("/login", loginRouteHandler);
 
     final pipeline =
         Pipeline().addMiddleware(createPost()).addHandler(appRoute);
