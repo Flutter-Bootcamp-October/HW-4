@@ -4,7 +4,7 @@ import 'package:shelf/shelf_io.dart';
 
 import 'routes/main_route.dart';
 
-void main() async {    
+void main() async {
   final ip = InternetAddress.anyIPv4;
   final port = int.parse(Platform.environment['PORT'] ?? "8080");
 
