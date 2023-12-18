@@ -2,20 +2,15 @@ import 'dart:io';
 
 import 'package:shelf/shelf.dart';
 
-mainRouteHandler(Request req) {
-  return Response.ok("body");
-}
-
 loginRouteHandler(Request req) async {
   try {
     final userPath = './user.txt';
     final File userFile = File(userPath);
-    userFile.openRead().toList();
+    userFile.openRead();
 
     final tokenPath = './token.txt';
     final File tokenFile = File(tokenPath);
-
-    final String token = randomToken();
+    final token = randomToken();
     await tokenFile.writeAsString(token);
     return Response.ok("login success");
   } catch (e) {

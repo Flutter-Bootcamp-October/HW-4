@@ -7,7 +7,6 @@ class MainRoutes {
   Handler get route {
     final appRoute = Router();
     appRoute
-      ..get("/", mainRouteHandler)
       ..get("/login", loginRouteHandler)
       ..post("/post", postRouteHandler);
 
