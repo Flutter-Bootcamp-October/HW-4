@@ -1,9 +1,14 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:shelf/shelf.dart';
 
 loginRouteHandler(Request req) async {
   try {
+    final body = json.decode(await req.readAsString());
+    final email = body["email"];
+    final password = body["password"];
+
     final userPath = './user.txt';
     final File userFile = File(userPath);
     userFile.openRead();
@@ -18,15 +23,7 @@ loginRouteHandler(Request req) async {
   }
 }
 
-postRouteHandler(Request req) async {
-  final tokenPath = './token.txt';
-  final File tokenFile = File(tokenPath);
-  final String token = await tokenFile.readAsString();
-  if (req.headers["token"] == token) {
-    return Response.ok("valid token");
-  }
-  return Response.unauthorized("token not valid");
-}
+
 
 String randomToken() {
   return DateTime.now().toString();
