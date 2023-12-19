@@ -1,18 +1,16 @@
 import 'package:shelf/shelf.dart';
 
+import '../database/supabase.dart';
+
 homeHandler(Request req) async {
-  // File file = File('bin/database/database.txt');
-  // List<String> lines = file.readAsLinesSync();
-  // final body = jsonDecode(await req.readAsString());
-  // for (var l in lines) {
-  //   List temp = l.split(",");
-  //   if (temp[0] == body["email"] &&
-  //       temp[1] == body["password"] &&
-  //       temp[2] == req.headers["token"]) {
-  //     return Response.ok("In home successfully");
-  //   }
-  // }
-  // return Response.badRequest(
-  //     body: "Unsuccessful attempt. Token might be invalid");
-  return Response.ok(req.url.toString());
+  print("here");
+  try {
+    final x = await SupaServices().supa.from("todos").insert("").select();
+    print(x);
+    return Response.ok(req.requestedUri.toString());
+  } catch (error) {
+    print("here");
+    print(error.toString());
+    return Response.badRequest();
+  }
 }

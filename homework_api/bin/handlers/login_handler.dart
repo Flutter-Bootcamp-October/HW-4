@@ -1,32 +1,32 @@
+import 'dart:convert';
+
 import 'package:shelf/shelf.dart';
-import 'dart:io';
+import 'package:supabase/supabase.dart';
+
+import '../database/supabase.dart';
 
 loginHandler(Request req) async {
-  // File file = File('bin/database/database.txt');
-  // List<String> lines = file.readAsLinesSync();
-  // final body = jsonDecode(await req.readAsString());
-  // bool found = false;
-  // final token = Random().nextInt(2000);
-  // String content = "";
-  // for (var l in lines) {
-  //   List temp = l.split(",");
-  //   if (temp[0] == body["email"] && temp[1] == body["password"]) {
-  //     temp[2] = token.toString();
-  //     //rewrite file
-  //     l = temp.join(",");
-  //     print(l);
-  //     found = true;
-  //   }
-  //   content += "$l\n";
-  // }
-  // handlerHelper(file, content);
-  // if (found) {
-  //   return Response.ok("login successful. You token is: $token");
-  // }
-  // return Response.badRequest(body: "Invalid Credintials");
-  return Response.ok(await req.readAsString());
-}
-
-handlerHelper(File x, String c) {
-  x.writeAsStringSync(c);
+  final Map body = await jsonDecode(await req.readAsString());
+  if (body["email"] != null && body["password"] != null) {
+    try {
+      AuthResponse user = await SupaServices()
+          .supa
+          .auth
+          .signInWithPassword(password: body["password"], email: body["email"]);
+      return Response.ok(
+          json.encode({
+            "token": user.session!.accessToken,
+            "refreshToken": user.session!.refreshToken,
+            "expires_at": user.session!.expiresAt
+          }),
+          headers: {"Content-Type": "application/json"});
+    } on AuthException catch (error) {
+      return Response(int.parse(error.statusCode.toString()),
+          body: error.message);
+    } catch (error) {
+      return Response.badRequest(body: "rejected login attempt");
+    }
+  } else {
+    return Response.badRequest(body: "request is incomplete");
+  }
 }
