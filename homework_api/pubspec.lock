@@ -89,6 +89,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.0"
+  functions_client:
+    dependency: transitive
+    description:
+      name: functions_client
+      sha256: "9a0ab83a525c8691a6724746e642de755a299afa04158807787364cd9e718001"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   glob:
     dependency: transitive
     description:
@@ -97,6 +105,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
+  gotrue:
+    dependency: transitive
+    description:
+      name: gotrue
+      sha256: "1e3e58e5a87aca51d3f161e8086c6c539e314d0cce7f252885ab4e0f51d94704"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.0"
   http:
     dependency: "direct dev"
     description:
@@ -145,6 +161,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.7"
+  jwt_decode:
+    dependency: transitive
+    description:
+      name: jwt_decode
+      sha256: d2e9f68c052b2225130977429d30f187aa1981d789c76ad104a32243cfdebfbb
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.1"
   lints:
     dependency: "direct dev"
     description:
@@ -217,6 +241,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.5.1"
+  postgrest:
+    dependency: transitive
+    description:
+      name: postgrest
+      sha256: db22d39f610ac29f58a2b2fddbda8ff63ce801eef8fec0210a4911822ea3955c
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   pub_semver:
     dependency: transitive
     description:
@@ -225,6 +257,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+  realtime_client:
+    dependency: transitive
+    description:
+      name: realtime_client
+      sha256: "5831636c19802ba936093a35a7c5b745b130e268fa052e84b4b5290139d2ae03"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
+  retry:
+    dependency: transitive
+    description:
+      name: retry
+      sha256: "822e118d5b3aafed083109c72d5f484c6dc66707885e07c0fbcb8b986bba7efc"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.2"
+  rxdart:
+    dependency: transitive
+    description:
+      name: rxdart
+      sha256: "0c7c0cedd93788d996e33041ffecda924cc54389199cde4e6a34b440f50044cb"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.27.7"
   shelf:
     dependency: "direct main"
     description:
@@ -297,6 +353,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.11.1"
+  storage_client:
+    dependency: transitive
+    description:
+      name: storage_client
+      sha256: b49ff2e1e6738c0ef445546d6ec77040829947f0c7ef0b115acb125656127c83
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   stream_channel:
     dependency: transitive
     description:
@@ -313,6 +377,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  supabase:
+    dependency: "direct main"
+    description:
+      name: supabase
+      sha256: b61cd60284e230052bc4e8e05100d0f3c12c33ec60ceeaf6db6c8668b3f0c787
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.1"
   term_glyph:
     dependency: transitive
     description:
@@ -401,5 +473,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.2"
+  yet_another_json_isolate:
+    dependency: transitive
+    description:
+      name: yet_another_json_isolate
+      sha256: e727502a2640d65b4b8a8a6cb48af9dd0cbe644ba4b3ee667c7f4afa0c1d6069
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
 sdks:
   dart: ">=3.2.2 <4.0.0"

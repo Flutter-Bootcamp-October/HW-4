@@ -17,6 +17,7 @@ class MainRoutes {
   }
 
   Middleware checkType() => ((innerHandler) => (Request req) {
+        print(req.url.toString());
         if (req.headers["type"] == "user") {
           return innerHandler(req);
         }
